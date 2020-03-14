@@ -1,11 +1,11 @@
 {
   "name": "fantasy-scoring",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Instructions In the initial commit to this project, you have been provided with a basic project setup as well as a set of tests which currently fail. Your task is to create a `calculateScore` function which will properly calculate the fantasy score for all known positions, returning 0 when the position is not one of the ones laid out below.",
   "main": ".eslintrc.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint --format codeframe .",
-    "test": "./node_modules/.bin/mocha tests.js"
+    "lint": "eslint --format codeframe .",
+    "test": "mocha tests.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,6 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
-    "mocha": "^7.0.1"
+    "mocha": "^7.1.0"
   }
 }
