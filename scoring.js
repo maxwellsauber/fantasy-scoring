@@ -7,10 +7,10 @@ const calculateScore = (player) => {
       return runningBackOrWideReceiverScore(player)
     default:
       return 0
-  } 
+  }
 }
 
-const quarterBackScore = (player) =>{
+const quarterBackScore = (player) => {
   const score = 0
 
   return 40.72  // test first test
@@ -18,7 +18,7 @@ const quarterBackScore = (player) =>{
 
 const runningBackOrWideReceiverScore = (player) => {
   const score = 0
-  
+
   return 32 // test second test
 
 }
