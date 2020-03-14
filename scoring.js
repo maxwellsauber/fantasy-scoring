@@ -11,15 +11,21 @@ const calculateScore = (player) => {
 }
 
 const quarterBackScore = (player) => {
-  const score = 0
+  let score = 0
 
-  return 40.72  // test first test
+  score += player.stats.passing.yards / 25
+  score += player.stats.passing.touchdowns * 6
+  score += player.stats.passing.interceptions * -3
+  score += player.stats.rushing.yards / 10
+  score += player.stats.rushing.touchdowns * 6
+  score += player.stats.rushing.fumbles * -3
+
+  return score
 }
 
 const runningBackOrWideReceiverScore = (player) => {
-  const score = 0
+  let score = 0
 
-  return 32 // test second test
-
+  return score
 }
 module.exports = calculateScore
