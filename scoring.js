@@ -13,9 +13,7 @@ const calculateScore = (player) => {
 }
 
 const quarterBackScore = (player) => {
-  let score = 0
-
-  score += player.stats.passing.yards / 25
+  const score = player.stats.passing.yards / 25
     + player.stats.passing.touchdowns * 6
     + player.stats.passing.interceptions * -3
     + player.stats.rushing.yards / 10
@@ -26,9 +24,7 @@ const quarterBackScore = (player) => {
 }
 
 const runningBackOrWideReceiverScore = (player) => {
-  let score = 0
-
-  score += player.stats.rushing.yards / 10
+  const score = player.stats.rushing.yards / 10
     + player.stats.rushing.touchdowns * 6
     + player.stats.rushing.fumbles * -3
     + player.stats.receiving.receptions
@@ -46,9 +42,7 @@ const runningBackOrWideReceiverScore = (player) => {
 }
 
 const tightEndScore = (player) => {
-  let score = 0
-
-  score += player.stats.receiving.receptions
+  const score = player.stats.receiving.receptions
     + player.stats.receiving.yards / 10
     + player.stats.receiving.touchdowns * 6
     + player.stats.receiving.fumbles * 3
