@@ -5,8 +5,8 @@ const calculateScore = (player) => {
     case 'RB':
     case 'WR':
       return runningBackOrWideReceiverScore(player)
-    case "TE":
-      return tightEndScore()
+    case 'TE':
+      return tightEndScore(player)
     default:
       return 0
   }
@@ -16,11 +16,11 @@ const quarterBackScore = (player) => {
   let score = 0
 
   score += player.stats.passing.yards / 25
-  score += player.stats.passing.touchdowns * 6
-  score += player.stats.passing.interceptions * -3
-  score += player.stats.rushing.yards / 10
-  score += player.stats.rushing.touchdowns * 6
-  score += player.stats.rushing.fumbles * -3
+    + player.stats.passing.touchdowns * 6
+    + player.stats.passing.interceptions * -3
+    + player.stats.rushing.yards / 10
+    + player.stats.rushing.touchdowns * 6
+    + player.stats.rushing.fumbles * -3
 
   return score
 }
@@ -29,24 +29,29 @@ const runningBackOrWideReceiverScore = (player) => {
   let score = 0
 
   score += player.stats.rushing.yards / 10
-  score += player.stats.rushing.touchdowns * 6
-  score += player.stats.rushing.fumbles * -3
-  score += player.stats.receiving.receptions
-  score += player.stats.receiving.yards / 10
-  score += player.stats.receiving.touchdowns * 6
-  score += player.stats.receiving.fumbles * -3
-  score += player.stats.return.kickreturn.yards / 15
-  score += player.stats.return.kickreturn.touchdowns * 6
-  score += player.stats.return.kickreturn.fumbles * -3
-  score += player.stats.return.puntreturn.yards / 15
-  score += player.stats.return.puntreturn.touchdowns * 6
-  score += player.stats.return.puntreturn.fumbles * -3
+    + player.stats.rushing.touchdowns * 6
+    + player.stats.rushing.fumbles * -3
+    + player.stats.receiving.receptions
+    + player.stats.receiving.yards / 10
+    + player.stats.receiving.touchdowns * 6
+    + player.stats.receiving.fumbles * -3
+    + player.stats.return.kickreturn.yards / 15
+    + player.stats.return.kickreturn.touchdowns * 6
+    + player.stats.return.kickreturn.fumbles * -3
+    + player.stats.return.puntreturn.yards / 15
+    + player.stats.return.puntreturn.touchdowns * 6
+    + player.stats.return.puntreturn.fumbles * -3
 
   return score
 }
 
 const tightEndScore = (player) => {
   let score = 0
+
+  score += player.stats.receiving.receptions
+    + player.stats.receiving.yards / 10
+    + player.stats.receiving.touchdowns * 6
+    + player.stats.receiving.fumbles * 3
 
   return score
 }
