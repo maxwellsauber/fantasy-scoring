@@ -12,40 +12,40 @@ const calculateScore = (player) => {
   }
 }
 
-const quarterBackScore = (p) => {
-  const score = p.passing.yards / 25
-    + p.passing.touchdowns * 6
-    + p.passing.interceptions * -3
-    + p.rushing.yards / 10
-    + p.rushing.touchdowns * 6
-    + p.rushing.fumbles * -3
+const quarterBackScore = (stats) => {
+  const score = stats.passing.yards / 25
+    + stats.passing.touchdowns * 6
+    + stats.passing.interceptions * -3
+    + stats.rushing.yards / 10
+    + stats.rushing.touchdowns * 6
+    + stats.rushing.fumbles * -3
 
   return score
 }
 
-const runningBackOrWideReceiverScore = (p) => {
-  const score = p.rushing.yards / 10
-    + p.rushing.touchdowns * 6
-    + p.rushing.fumbles * -3
-    + p.receiving.receptions
-    + p.receiving.yards / 10
-    + p.receiving.touchdowns * 6
-    + p.receiving.fumbles * -3
-    + p.return.kickreturn.yards / 15
-    + p.return.kickreturn.touchdowns * 6
-    + p.return.kickreturn.fumbles * -3
-    + p.return.puntreturn.yards / 15
-    + p.return.puntreturn.touchdowns * 6
-    + p.return.puntreturn.fumbles * -3
+const runningBackOrWideReceiverScore = (stats) => {
+  const score = stats.rushing.yards / 10
+    + stats.rushing.touchdowns * 6
+    + stats.rushing.fumbles * -3
+    + stats.receiving.receptions
+    + stats.receiving.yards / 10
+    + stats.receiving.touchdowns * 6
+    + stats.receiving.fumbles * -3
+    + stats.return.kickreturn.yards / 15
+    + stats.return.kickreturn.touchdowns * 6
+    + stats.return.kickreturn.fumbles * -3
+    + stats.return.puntreturn.yards / 15
+    + stats.return.puntreturn.touchdowns * 6
+    + stats.return.puntreturn.fumbles * -3
 
   return score
 }
 
-const tightEndScore = (p) => {
-  const score = p.receiving.receptions
-    + p.receiving.yards / 10
-    + p.receiving.touchdowns * 6
-    + p.receiving.fumbles * 3
+const tightEndScore = (stats) => {
+  const score = stats.receiving.receptions
+    + stats.receiving.yards / 10
+    + stats.receiving.touchdowns * 6
+    + stats.receiving.fumbles * 3
 
   return score
 }
