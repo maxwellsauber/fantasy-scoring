@@ -12,40 +12,40 @@ const calculateScore = (player) => {
   }
 }
 
-const quarterBackScore = (player) => {
-  const score = player.passing.yards / 25
-    + player.passing.touchdowns * 6
-    + player.passing.interceptions * -3
-    + player.rushing.yards / 10
-    + player.rushing.touchdowns * 6
-    + player.rushing.fumbles * -3
+const quarterBackScore = (p) => {
+  const score = p.passing.yards / 25
+    + p.passing.touchdowns * 6
+    + p.passing.interceptions * -3
+    + p.rushing.yards / 10
+    + p.rushing.touchdowns * 6
+    + p.rushing.fumbles * -3
 
   return score
 }
 
-const runningBackOrWideReceiverScore = (player) => {
-  const score = player.rushing.yards / 10
-    + player.rushing.touchdowns * 6
-    + player.rushing.fumbles * -3
-    + player.receiving.receptions
-    + player.receiving.yards / 10
-    + player.receiving.touchdowns * 6
-    + player.receiving.fumbles * -3
-    + player.return.kickreturn.yards / 15
-    + player.return.kickreturn.touchdowns * 6
-    + player.return.kickreturn.fumbles * -3
-    + player.return.puntreturn.yards / 15
-    + player.return.puntreturn.touchdowns * 6
-    + player.return.puntreturn.fumbles * -3
+const runningBackOrWideReceiverScore = (p) => {
+  const score = p.rushing.yards / 10
+    + p.rushing.touchdowns * 6
+    + p.rushing.fumbles * -3
+    + p.receiving.receptions
+    + p.receiving.yards / 10
+    + p.receiving.touchdowns * 6
+    + p.receiving.fumbles * -3
+    + p.return.kickreturn.yards / 15
+    + p.return.kickreturn.touchdowns * 6
+    + p.return.kickreturn.fumbles * -3
+    + p.return.puntreturn.yards / 15
+    + p.return.puntreturn.touchdowns * 6
+    + p.return.puntreturn.fumbles * -3
 
   return score
 }
 
-const tightEndScore = (player) => {
-  const score = player.receiving.receptions
-    + player.receiving.yards / 10
-    + player.receiving.touchdowns * 6
-    + player.receiving.fumbles * 3
+const tightEndScore = (p) => {
+  const score = p.receiving.receptions
+    + p.receiving.yards / 10
+    + p.receiving.touchdowns * 6
+    + p.receiving.fumbles * 3
 
   return score
 }
